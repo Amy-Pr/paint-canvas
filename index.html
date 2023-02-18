@@ -59,11 +59,17 @@
   
 
   canvas.addEventListener("mousedown", (e) => { //before moving mouse, we're clicking down. This fixes the above so that initial X and Y update, don't connect to last coordinate
-    isDrawing = true;
+   isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
   });
 
+  //canvas.addEventListener("touchstart", (e) => { //before moving mouse, we're clicking down. This fixes the above so that initial X and Y update, don't connect to last coordinate
+   //isDrawing = true;
+  // [lastX, lastY] = [e.offsetX, e.offsetY];
+ //});
+  
   canvas.addEventListener("mousemove", draw); 
+  //canvas.addEventListener("touchmove", draw);
   canvas.addEventListener("mouseup", () => isDrawing = false); 
   canvas.addEventListener("mouseout", () => isDrawing = false); 
 
